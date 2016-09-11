@@ -1,0 +1,22 @@
+# Music:
+musicHome: "/home/pi/Music"
+audioDevice: "PCM"
+
+# Voice:
+voiceLanguage: "de-de" # As defined here: http://www.voicerss.org/api/documentation.aspx
+voiceApiKey: "" # Get one here: http://www.voicerss.org/
+voiceQuality: "48khz_16bit_stereo"
+voiceCache: "/var/cache/roomyBox"
+
+# Motion:
+motionPin: "RPI_GPIO_P1_18" # GPIO-pin for reading motion high/low
+motionThreshold: "60" # seconds of inactivity until room's assumed empty
+absenceThreshold: "3600" # seconds of absence until greeting is played on return
+
+# Static configs:
+appname: "roomyBox"
+layout: "main"
+charset: "UTF-8"
+template: "simple"
+
+

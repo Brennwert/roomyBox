@@ -1,0 +1,80 @@
+/* Weather: */
+
+.weatherIcon {
+  float: left;
+  width: 60px;
+  height: 60px;
+}
+
+.weatherIconSmall {
+  margin: 0 10px 0 0;
+  width: 30px;
+  height: 30px;
+}
+
+.weatherBox {
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: top;
+  width: 110px;
+  height: 125px;
+  margin: 3px 5px 0 5px; 
+  border: 1px dashed #fff;
+  border-radius: 20px;
+  font-size: 17px;
+  padding: 0 2px 0 2px;
+}
+
+.weatherBoxToday {
+  border: 2px solid #fff;
+}
+
+.weekday {
+  font-size: 21px;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px #000;
+}
+
+.temp {
+  font-size: 18px;
+}
+
+.tempMin {
+  font-size: 15px;
+}
+
+.conditionText {
+  margin-top: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.hourlyLine {
+  width: 100%;
+  display: inline-block;
+  text-align: left;
+  height: 40px;
+  border-bottom: 1px solid #febf04;
+  overflow: hidden;
+  white-space: nowrap;
+  
+}
+
+.conditionTextHourly {
+  display: inline-block;
+}
+
+.tempHourly {
+  display: inline-block;
+  margin: 0 10px 0 10px;
+  font-size: 23px;
+  font-weight: bold;
+  /* text-shadow: 1px 1px 1px #febf04; */
+}
+
+.timeHourly {
+  display: inline-block;
+  color: #febf04;
+  font-style: italic;
+}

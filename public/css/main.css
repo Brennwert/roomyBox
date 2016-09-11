@@ -1,0 +1,78 @@
+
+html,body {
+    height: 100%;
+    text-align: center;
+}
+
+body {
+    font-size: 22px;
+    font-family: 'PT Sans', sans-serif;
+    color: #fff;
+    background: url(/gfx/Tree-of-Life.jpg);
+    background-size: cover;
+    height: 96%;
+}
+
+h1,h2,h3,h4 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    color: #febf04;
+    text-shadow: 1px 1px 1px #000;
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 10000;
+    background-color: rgba(0,0,0,0.8);
+    display: none;
+}
+
+#popup {
+    z-index: 100001;
+    color: #000;
+    width:350px;
+    min-height: 400px;
+    position: fixed;
+    left:50%;
+    top:50%;
+    padding: 10px;
+    margin-top: -225px;
+    margin-left: -175px;
+    background-color: #ffffff;
+    border-radius: 35px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: #febf04;
+    display: none;
+    box-shadow: 0px 0px 15px #fff;
+}
+
+.containerBox {
+    width: 99%;
+    height: 135px;
+    padding: 3px;
+    /*margin-bottom: 15px;*/
+    /*display: inline-block;*/
+    border: 2px solid #fff;
+    border-radius: 25px;
+    background: rgba(54, 25, 25, .6);
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+/* Clock: */
+#clock {
+    margin: 30px 0 10px 0;
+    height: 130px;
+    font-size: 70px;
+    font-weight: bold;
+    text-shadow: 2px 2px 2px #000;
+    letter-spacing: 0px;
+}

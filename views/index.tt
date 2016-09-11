@@ -1,0 +1,40 @@
+
+<script type="text/javascript" src="/js/config.js"></script>
+
+<script type="text/babel" src="/js/music.js"></script>
+<script type="text/babel" src="/js/weather.js"></script>
+
+<link rel="stylesheet" href="/css/music.css">
+<link rel="stylesheet" href="/css/weather.css">
+
+
+<div class="containerBox">
+  <div id="currentTrack"></div>
+  <div id="trackList"></div>
+</div>
+<div id="clock"></div>
+<div id="weatherContainer" class="containerBox"></div>
+
+<div id="overlay"></div>
+
+<script type="text/javascript">
+
+  $(document).ready(function () {
+
+    // Hide popup on click outside:
+    $(document).on("click", function(e) {
+      if ( ! $(e.target).closest('#popup').length 
+            && ! $(e.target).closest('.weatherBox').length
+          ) {
+        $('#popup').fadeOut();
+        $('#overlay').hide();
+      }
+    });
+
+    setInterval(function() { 
+      $('#clock').html( moment().format('HH:mm') );
+    }, 1000);
+  });
+
+
+</script>

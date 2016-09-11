@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>roomyBox</title>
+
+    <script src="/external/react.min.js"></script>
+    <script src="/external/react-dom.js"></script>
+    <script src="/external/babel.min.js"></script>
+    <script src="/external/jquery.min.js"></script>
+    <script src="/external/jquery-ui-1.12.0/jquery-ui.min.js"></script>
+    <script src="/external/moment-with-locales.js"></script>
+
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/external/jquery-ui-1.12.0/jquery-ui.css">
+    <link rel="stylesheet" href="/external/font-awesome-4.6.3/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
+  </head>
+
+  <body>
+    <% content %>
+  </body>
+  
+</html>
