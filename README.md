@@ -1,6 +1,7 @@
 # roomyBox
-This is an application-bundle and UI meant to be nice having around on a touchscreen-computer somewhere in your house. Turns the screen on when you enter the room and resumes your music that stopped when you left. Shows you clock, weather, musicplayer or any other widget you'd like to code.<br>
-The frontend is built on ReactJS (were my first steps with it). The backend is a Perl Dancer2 server.
+This is an application-bundle and UI meant to be nice having around on a touchscreen-computer somewhere in your house. Turns the screen on when you enter the room and resumes your music that stopped when you left. Shows you clock, weather, musicplayer or any other widget you'd like to code yourself.<br>
+The frontend is built on ReactJS (were my first steps with it). The backend is a Perl Dancer2 server.<br>
+Used APIs: OpenWeatherMap, VoiceRSS
 <br><br>
 <img src="http://roomybox.wolf.place/images/screenshots/screenshot1.png" width="400">
 <img src="http://roomybox.wolf.place/images/screenshots/screenshot2.png" width="400">
