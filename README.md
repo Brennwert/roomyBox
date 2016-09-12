@@ -1,5 +1,5 @@
 # roomyBox
-This is an application-bundle and UI meant to be nice having around on a computer somewhere in your house. Turns the screen on when you enter the room and resumes your music that stopped when you left. Shows you clock, weather, musicplayer or any other widget you'd like to code.<br>
+This is an application-bundle and UI meant to be nice having around on a touchscreen-computer somewhere in your house. Turns the screen on when you enter the room and resumes your music that stopped when you left. Shows you clock, weather, musicplayer or any other widget you'd like to code.<br>
 The frontend is built on ReactJS (were my first steps with it). The backend is a Perl Dancer2 server.
 <br><br>
 <img src="http://roomybox.wolf.place/images/screenshots/screenshot1.png" width="400">
@@ -37,7 +37,7 @@ wget http://www.airspayce.com/mikem/bcm2835/bcm2835-1.50.tar.gz
 tar -xvzf bcm2835-1.50.tar.gz 
 cd bcm2835-1.50/
 ./configure 
-make &&  make install
+make && make install
 cpan -i Device::BCM2835
 ```
 
@@ -59,8 +59,15 @@ check host dancer with address 127.0.0.1
       with timeout 3 seconds
       then restart
 ```
+It's also handy to keep the MOC-server up:
+```
+check process mocp
+        matching "mocp -S"
+        if does not exist then exec "/bin/bash -c '/bin/rm -f /root/.moc/pid ; /usr/bin/mocp -S'"
+```
 
-For more elegant and multi-threading deployment-methods have a look at the Dancer2 docs:<br> http://search.cpan.org/~cromedome/Dancer2-0.202000/lib/Dancer2/Manual/Deployment.pod
+For more elegant and multi-threading deployment-methods have a look at the Dancer2 docs:<br>
+http://search.cpan.org/~cromedome/Dancer2-0.202000/lib/Dancer2/Manual/Deployment.pod
 
 #### Browser-Kiosk
 Add to `~/.config/lxsession/LXDE-pi/autostart`:<br>
@@ -79,4 +86,5 @@ You should at least set your Music-directory and API-key for weather-display in
 </ul>
 
 ### Trivia
-The UI is optimized for my 7" touchscreen on 800*480 pixels. It's quiet responsive, but looks a bit lost on high resolutions.
+The UI is optimized for my 7" touchscreen on 800*480 pixels. It's quiet responsive, but looks a bit lost on high resolutions.<br>
+PIR sensor-pin is hardcoded to RPI_GPIO_P1_18 until someone finds a way making this a variable in motion.pl.
