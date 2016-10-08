@@ -1,2 +1,7 @@
-
-greetings: [Hallihallo,Willkommen zurück,Was für ein wunderschöner Tag]
+greetings: [
+        'Hallihallo',
+        'Willkommen zurück',
+        'Was für ein wunderschöner Tag',
+        'Bin schon wach!',
+        'Da bin ich',
+]

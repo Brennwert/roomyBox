@@ -69,7 +69,7 @@ while (1)
         # If returned from long absence: Say good morning / evening / hello:
         if ( time() - $motion->{lastMotion} > $config->{absenceThreshold} ) {
             print "Greeting\n";
-            $voice->say("Hallihallo!");
+	    $voice->say( $lang->{greetings}[rand @{ $lang->{greetings} }] );
         }
 
         # Read RSS
