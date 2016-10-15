@@ -30,7 +30,6 @@ my $music = Music->new(
 	);
 
 if (config->{musicAutostart}) {
-	sleep 1; # Let MOC-server start...
 	$music->setPath( config->{musicHome} . '/' . config->{musicAutostart} );
 	$music->play();
 }
