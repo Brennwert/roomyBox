@@ -208,20 +208,29 @@ ReactDOM.render(
 
 
 $( function() {
-	$( "#ctrlVolume" ).slider({
-		orientation: "horizontal",
-		range: "min",
-		max: 100,
-		value: 80,
-		change: function(event,ui) { 
-			$.ajax({
-				url: '/music/setVolume?arg=' + $(this).slider("value"),
-				dataType: 'json',
-				cache: false,
-				success: function(data) {
+	$.ajax({
+		url: '/music/getVolume',
+		dataType: 'json',
+		cache: false,
+		success: function(data) {
+			$( "#ctrlVolume" ).slider({
+				orientation: "horizontal",
+				range: "min",
+				max: 100,
+				value: data.volume,
+				change: function(event,ui) { 
+					$.ajax({
+						url: '/music/setVolume?arg=' + $(this).slider("value"),
+						dataType: 'json',
+						cache: false,
+						success: function(data) {
 
-				}.bind(this)
-  			});
-		},
+						}.bind(this)
+					});
+				},
+			});
+
+		}.bind(this)
 	});
+
 });
