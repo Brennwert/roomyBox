@@ -1,5 +1,6 @@
 # Music:
 musicHome: "/home/pi/Music"
+musicAutostart: "" # Relative to musicHome
 audioDevice: "PCM"
 
 # Voice:
