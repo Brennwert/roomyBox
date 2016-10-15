@@ -16,6 +16,7 @@
 
 .trackListEntry {
   cursor: pointer;
+  font-size: 25px;
 }
 
 .trackListEntry:hover {
@@ -23,6 +24,13 @@
   background: -webkit-linear-gradient(top,  rgba(254,191,4,1) 0%,rgba(255,214,94,1) 100%);
   background: linear-gradient(to bottom,  rgba(254,191,4,1) 0%,rgba(255,214,94,1) 100%); 
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#febf04', endColorstr='#ffd65e',GradientType=0 );
+}
+
+.musicFolderBack {
+  font-style: italic; 
+  font-weight: bold; 
+  color: #febf04;
+  text-shadow: 1px -1px 1px #fff;
 }
 
 .ctrl {
@@ -45,8 +53,9 @@
 }
 
 .ctrlTiny {
-  margin: 0 5px 0 5px;
-  font-size: 23px;
+  cursor: pointer;
+  margin: 0 15px 0 15px;
+  font-size: 32px;
 }
 
 #currentTitle,#timeLeft {
@@ -83,7 +92,7 @@
 
 #ctrlVolume {
   margin-top: 15px;
-  width: 80%;
+  width: 72%;
   display: inline-block;
 }
 

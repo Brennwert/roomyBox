@@ -45,7 +45,10 @@ var CurrentTrack = React.createClass({
 	    dataType: 'json',
 	    cache: false,
 	    success: function(data) {
-	      //this.setState({currentTrack: data});
+	      if (data.volume) {
+			// Update volume-slider position:
+			$("#ctrlVolume").slider('option','value',data.volume);
+	      }	
 	    }.bind(this),
 	    error: function(xhr, status, err) {
 	      console.error(url, status, err.toString());
@@ -89,8 +92,9 @@ var CurrentTrack = React.createClass({
 	        <i className="ctrl fa fa-repeat" aria-hidden="true" onClick={() => { this.ctrlClick( '/music/repeat') } } />
 
 	        <div id="ctrlVolumeWrapper">
-		        <i className="ctrlTiny fa fa-volume-up" aria-hidden="true" />
+		        <i className="ctrlTiny fa fa-volume-down" aria-hidden="true" onClick={() => { this.ctrlClick( '/music/volDown') } } />
 		        <div id="ctrlVolume"></div>
+		        <i className="ctrlTiny fa fa-volume-up" aria-hidden="true" onClick={() => { this.ctrlClick( '/music/volUp') } } />
 	        </div>
 	        
 	      </div>
@@ -177,7 +181,7 @@ var TrackList = React.createClass({
 
 	  var jumpUp = '';
 	  if (this.state.directory.isRoot == 0) {
-	    jumpUp = <div className="trackListEntry" onClick={() => this.entryClick( this.state.directory.path, '..' ) }><img src="/gfx/music/arrowBack.png" /> <b><i>Zur&uuml;ck</i></b></div>;
+	    jumpUp = <div className="trackListEntry" onClick={() => this.entryClick( this.state.directory.path, '..' ) }><img src="/gfx/music/arrowBack.png" /> <span className="musicFolderBack">Zur&uuml;ck</span></div>;
 	  }
 
 	  return <div>

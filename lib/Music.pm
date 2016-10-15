@@ -159,19 +159,22 @@ sub repeat {
 
 sub volUp {
 	my $self = shift;
-	return $self->setVolume( $self->getVolume() + 5 );
+	my $curVol = from_json $self->getVolume();
+	return $self->setVolume( $curVol->{volume} + 5 );
 }
 
 
 sub volDown {
 	my $self = shift;
-	return $self->setVolume( $self->getVolume() - 5 );
+	my $curVol = from_json $self->getVolume();
+	return $self->setVolume( $curVol->{volume} - 5 );
 }
 
 sub setVolume {
 	my $self = shift;
-	system('amixer set ' . $self->{audioDevice} . ' ' . $self->{arg} . '%');
-	return to_json { volume => $self->{arg} };
+	my $setVol = shift || $self->{arg};
+	system('amixer set ' . $self->{audioDevice} . ' ' . $setVol . '%');
+	return to_json { volume => $setVol };
 }
 
 
