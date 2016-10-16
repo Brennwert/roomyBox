@@ -95,18 +95,19 @@ while (1)
     } else {
     	print "Room empty.\n";
 
-    	# Turn off screen (but wait a minute after boot):
+    	# Wait a minute after boot until turning anything off:
         if (time() - $startTime > 60) {
+	    # Turn off screen:
             system('echo 1 > /sys/class/backlight/rpi_backlight/bl_power');
-        }
 
-    	# Pause music if it's playing:
-    	my $track = from_json $music->currentTrack();
-    	if ($track->{State} eq 'PLAY') {
-    		print "Pausing music\n";
-    		$music->pause();
-    		$motion->pausedMusic(1);
-    	}
+   	    # Pause music if it's playing:
+	    my $track = from_json $music->currentTrack();
+	    if ($track->{State} eq 'PLAY') {
+		print "Pausing music\n";
+		$music->pause();
+		$motion->pausedMusic(1);
+	    }
+        }
     }
 
     Device::BCM2835::delay(500);
